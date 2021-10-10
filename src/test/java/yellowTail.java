@@ -10,6 +10,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class yellowTail {
     WebDriver driver;
@@ -19,6 +20,7 @@ public class yellowTail {
         System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.get("https://www.yellowtailwine.com/");
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
     }
 
     @Test(description = "Case 1: Welcome page: all required elements are displayed\n" + "1. Go to Welcome page: https://www.yellowtailwine.com\n" +
