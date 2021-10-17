@@ -1,8 +1,11 @@
-package pages;
+package yellowTailSite.pages;
+
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import yellowTailSite.DriverProvider;
 
 public class WelcomePage {
     WebDriver driver;
@@ -18,29 +21,29 @@ public class WelcomePage {
     private WebElement welcomeButton;
 
 
-    public WelcomePage(WebDriver driver) {
-        this.driver = driver;
+    public WelcomePage() {
+        this.driver = DriverProvider.INSTANCE.getDriver();
         PageFactory.initElements(driver, this);
     }
-
+    @Step
     public WebElement getLegalAgeField() {
         return legalAgeField;
     }
-
+    @Step
     public WebElement getLegalAgeCheckbox() {
         return legalDrinkingAgeCheckbox;
     }
-
+    @Step
     public WebElement getWelcomeButton() {
         return welcomeButton;
     }
-
+    @Step
     public WebElement getDropdownSelect() {
         return dropDownSelect;
     }
-
+    @Step
     public MainPage clickOnWelcomeButton() {
         getWelcomeButton().click();
-        return new MainPage(driver);
+        return new MainPage();
     }
 }

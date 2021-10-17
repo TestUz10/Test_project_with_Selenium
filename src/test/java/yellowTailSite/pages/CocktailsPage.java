@@ -1,9 +1,11 @@
-package pages;
+package yellowTailSite.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import yellowTailSite.DriverProvider;
 
 import java.util.List;
 
@@ -26,40 +28,39 @@ public class CocktailsPage {
     @FindBy(xpath = "//div[@class='tile recipe-tile']")
     private List<WebElement> wineRecipes;
 
-    public CocktailsPage(WebDriver driver) {
-        this.driver = driver;
+    public CocktailsPage() {
+        this.driver = DriverProvider.INSTANCE.getDriver();
         PageFactory.initElements(driver, this);
     }
-
+    @Step
     public WebElement getCocktailsLink() {
         return cocktailsLink;
     }
-
+    @Step
     public WebElement getWineForCocktailsSelecting() {
         return wineForCocktailsSelecting;
     }
-
+    @Step
     public WebElement getRedWineCocktails() {
         return redWineCocktails;
     }
-
+    @Step
     public List<WebElement> getRedWineRecipes() {
         return redWineRecipes;
     }
-
-
+    @Step
     public WebElement getSparklingWineCocktails() {
         return sparklingWineCocktails;
     }
-
+    @Step
     public WebElement getRaspberryRoseRecipe() {
         return raspberryRoseRecipe;
     }
-
+    @Step
     public WebElement getMultipleSelect() {
         return multipleSelect;
     }
-
+    @Step
     public List<WebElement> getWineRecipes() {
         return wineRecipes;
     }
