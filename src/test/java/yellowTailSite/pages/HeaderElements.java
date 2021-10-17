@@ -1,9 +1,12 @@
-package pages;
+package yellowTailSite.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.DataProvider;
+import yellowTailSite.DriverProvider;
 
 public class HeaderElements {
     WebDriver driver;
@@ -32,51 +35,51 @@ public class HeaderElements {
     private WebElement regionCN;
 
 
-    public HeaderElements(WebDriver driver) {
-        this.driver = driver;
+    public HeaderElements() {
+        this.driver = DriverProvider.INSTANCE.getDriver();
         PageFactory.initElements(driver, this);
     }
-
+    @Step
     public WebElement getYellowTailLink() {
         return yellowTailLink;
     }
-
+    @Step
     public WebElement getWinesLink() {
         return winesLink;
     }
-
+    @Step
     public WebElement getWhereToBuyLink() {
         return whereToBuyLink;
     }
-
+    @Step
     public WebElement getCocktailsLink() {
         return cocktailsLink;
     }
-
+    @Step
     public WebElement getOurStoryLink() {
         return ourStoryLink;
     }
-
+    @Step
     public WebElement getFAQSLink() {
         return FAQSLink;
     }
-
+    @Step
     public WebElement getContactLink() {
         return contactLink;
     }
-
+    @Step
     public WebElement getGlobeDDL() {
         return globeDDL;
     }
-
+    @Step
     public WebElement getRegionUS() {
         return regionUS;
     }
-
+    @Step
     public WebElement getRegionAU() {
         return regionAU;
     }
-
+    @Step
     public WebElement getRegionCN() {
         return regionCN;
     }

@@ -1,11 +1,11 @@
-package pages;
+package yellowTailSite.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import yellowTailSite.DriverProvider;
 
 public class WhereToBuyPage {
     WebDriver driver;
@@ -18,23 +18,24 @@ public class WhereToBuyPage {
     @FindBy(xpath = "//div[@class='tiles']/descendant::div[@class='tile']")
     private WebElement addressesAreDisplayed;
 
-    public WhereToBuyPage(WebDriver driver) {
-        this.driver = driver;
+    public WhereToBuyPage() {
+        this.driver = DriverProvider.INSTANCE.getDriver();
         PageFactory.initElements(driver, this);
     }
 
+    @Step
     public WebElement getMyLocation() {
         return myLocation;
     }
-
+    @Step
     public WebElement getSearchButton() {
         return searchButton;
     }
-
+    @Step
     public WebElement getStocksInYourArea() {
         return stocksInYourArea;
     }
-
+    @Step
     public WebElement getAddressesAreDisplayed() {
         return addressesAreDisplayed;
     }
