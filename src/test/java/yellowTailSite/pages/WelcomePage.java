@@ -1,44 +1,42 @@
 package yellowTailSite.pages;
 
+import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import yellowTailSite.DriverProvider;
 
 public class WelcomePage {
     WebDriver driver;
     @FindBy(xpath = "//label[text()='I am of legal drinking age in']")
-    private WebElement legalAgeField;
+    private SelenideElement legalAgeField;
     @FindBy(xpath = "//div[@class='confirmation-checkbox']/child::label")
-    private WebElement legalDrinkingAgeCheckbox;
+    private SelenideElement legalDrinkingAgeCheckbox;
     @FindBy(id = "\"agegate-selector-options\"")
-    private WebElement dropDownExists;
+    private SelenideElement dropDownExists;
     @FindBy(xpath = "//select[@name='country']")
-    private WebElement dropDownSelect;
+    private SelenideElement dropDownSelect;
     @FindBy(xpath = "//input[@type='submit']")
-    private WebElement welcomeButton;
+    private SelenideElement welcomeButton;
 
 
-    public WelcomePage() {
-        this.driver = DriverProvider.INSTANCE.getDriver();
-        PageFactory.initElements(driver, this);
+//    public WelcomePage() {
+//        this.driver = DriverProvider.INSTANCE.getDriver();
+//        PageFactory.initElements(driver, this);
+//    }
+    @Step
+    public SelenideElement getLegalAgeField() {
+        return (SelenideElement) legalAgeField;
     }
     @Step
-    public WebElement getLegalAgeField() {
-        return legalAgeField;
-    }
-    @Step
-    public WebElement getLegalAgeCheckbox() {
+    public SelenideElement getLegalAgeCheckbox() {
         return legalDrinkingAgeCheckbox;
     }
     @Step
-    public WebElement getWelcomeButton() {
+    public SelenideElement getWelcomeButton() {
         return welcomeButton;
     }
     @Step
-    public WebElement getDropdownSelect() {
+    public SelenideElement getDropdownSelect() {
         return dropDownSelect;
     }
     @Step
