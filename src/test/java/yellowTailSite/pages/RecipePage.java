@@ -1,5 +1,6 @@
 package yellowTailSite.pages;
 
+import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,20 +11,20 @@ import yellowTailSite.DriverProvider;
 public class RecipePage {
     WebDriver driver;
     @FindBy(xpath = "//h1[@class='recipe-title']")
-    private WebElement raspberryRoseTitle;
+    private SelenideElement raspberryRoseTitle;
     @FindBy(xpath = "//div[@class='ingredients']")
-    private WebElement ingredientsSection;
+    private SelenideElement ingredientsSection;
 
-    public RecipePage() {
-        this.driver = DriverProvider.INSTANCE.getDriver();
-        PageFactory.initElements(driver, this);
-    }
+//    public RecipePage() {
+//        this.driver = DriverProvider.INSTANCE.getDriver();
+//        PageFactory.initElements(driver, this);
+//    }
     @Step
-    public WebElement getRaspberryRoseTitle() {
+    public SelenideElement getRaspberryRoseTitle() {
         return raspberryRoseTitle;
     }
     @Step
-    public WebElement getIngredientsSection() {
+    public SelenideElement getIngredientsSection() {
         return ingredientsSection;
     }
 

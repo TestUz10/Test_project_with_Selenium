@@ -1,5 +1,6 @@
 package yellowTailSite.pages;
 
+import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,47 +11,55 @@ import yellowTailSite.DriverProvider;
 public class MainPage {
     WebDriver driver;
     @FindBy(xpath = "//span[text()='Menu']")
-    private WebElement menuButton;
+    private SelenideElement menuButton;
     @FindBy(xpath = "//div[@class='yt-logo']")
-    private WebElement yellowTailButton;
+    private SelenideElement yellowTailButton;
     @FindBy(xpath = "//div[@class='content animation-screen -one']/h2")
-    private WebElement welcomeToTheWorld;
+    private SelenideElement welcomeToTheWorld;
     @FindBy(xpath = "//*[starts-with(text(), 'We are passionate')]")
-    private WebElement textWeArePassionate;
+    private SelenideElement textWeArePassionate;
     @FindBy(xpath = "//*[contains(text(), 'Find Your Wine')]")
-    private WebElement findYourWineBtn;
+    private SelenideElement findYourWineBtn;
     @FindBy(xpath = "//footer")
-    private WebElement footer;
+    private SelenideElement footer;
 
-    public MainPage(){
-        this.driver = DriverProvider.INSTANCE.getDriver();
-        PageFactory.initElements(driver, this);
-    }
+    //
+//    public MainPage(){
+//        this.driver = DriverProvider.INSTANCE.getDriver();
+//        PageFactory.initElements(driver, this);
+//    }
     @Step
-    public WebElement getMenuButton() {
+    public SelenideElement getMenuButton() {
         return menuButton;
     }
+
     @Step
-    public WebElement getYellowTailButton(){
+    public SelenideElement getYellowTailButton() {
         return yellowTailButton;
     }
+
     @Step
-    public WebElement getWelcomeToTheWorld() {
+    public SelenideElement getWelcomeToTheWorld() {
         return welcomeToTheWorld;
     }
+
     @Step
-    public WebElement getTextWeArePassionate() {
+    public SelenideElement getTextWeArePassionate() {
         return textWeArePassionate;
     }
+
     @Step
-    public WebElement getFindYourWineButton() {
+    public SelenideElement getFindYourWineButton() {
         return findYourWineBtn;
     }
+
     @Step
-    public WebElement getFooter() {
+    public SelenideElement getFooter() {
         return footer;
     }
-//    public MenuBar clickOnMenuButton(){
-//        getMenuButton().click();
-//        return new MenuBar(driver);
+
+    public HeaderElements clickOnMenuButton() {
+        getMenuButton().click();
+        return new HeaderElements();
+    }
 }

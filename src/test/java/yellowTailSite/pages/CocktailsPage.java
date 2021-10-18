@@ -1,5 +1,6 @@
 package yellowTailSite.pages;
-
+import com.codeborne.selenide.ElementsCollection;
+import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,56 +13,56 @@ import java.util.List;
 public class CocktailsPage {
     WebDriver driver;
     @FindBy(xpath = "//div[@class='inner']//span[text()='Cocktails']")
-    private WebElement cocktailsLink;
+    private SelenideElement cocktailsLink;
     @FindBy(xpath = "//a[@class='selected']")
-    private WebElement wineForCocktailsSelecting;
+    private SelenideElement wineForCocktailsSelecting;
     @FindBy(xpath = "//*[@class='filter-options']/descendant::a[@data-value='red']")
-    private WebElement redWineCocktails;
+    private SelenideElement redWineCocktails;
     @FindBy(xpath = "//div[@class='tile recipe-tile']")
-    private List<WebElement> redWineRecipes;
+    private ElementsCollection redWineRecipes;
     @FindBy(xpath = "//h2[contains(text(),'Raspberry Rosé')]")
-    private WebElement raspberryRoseRecipe;
+    private SelenideElement raspberryRoseRecipe;
     @FindBy(xpath = "//*[@class='filter-options']/descendant::a[@data-value='bubbles']")
-    private WebElement sparklingWineCocktails;
+    private SelenideElement sparklingWineCocktails;
     @FindBy(xpath = "//div[@class='dropdown']//span[contains(text(),'Multiple')]")
-    private WebElement multipleSelect;
+    private SelenideElement multipleSelect;
     @FindBy(xpath = "//div[@class='tile recipe-tile']")
-    private List<WebElement> wineRecipes;
+    private ElementsCollection wineRecipes;
 
-    public CocktailsPage() {
-        this.driver = DriverProvider.INSTANCE.getDriver();
-        PageFactory.initElements(driver, this);
-    }
+//    public CocktailsPage() {
+//        this.driver = DriverProvider.INSTANCE.getDriver();
+//        PageFactory.initElements(driver, this);
+//    }
     @Step
-    public WebElement getCocktailsLink() {
+    public SelenideElement getCocktailsLink() {
         return cocktailsLink;
     }
     @Step
-    public WebElement getWineForCocktailsSelecting() {
+    public SelenideElement getWineForCocktailsSelecting() {
         return wineForCocktailsSelecting;
     }
     @Step
-    public WebElement getRedWineCocktails() {
+    public SelenideElement getRedWineCocktails() {
         return redWineCocktails;
     }
     @Step
-    public List<WebElement> getRedWineRecipes() {
+    public ElementsCollection getRedWineRecipes() {
         return redWineRecipes;
     }
     @Step
-    public WebElement getSparklingWineCocktails() {
+    public SelenideElement getSparklingWineCocktails() {
         return sparklingWineCocktails;
     }
     @Step
-    public WebElement getRaspberryRoseRecipe() {
+    public SelenideElement getRaspberryRoseRecipe() {
         return raspberryRoseRecipe;
     }
     @Step
-    public WebElement getMultipleSelect() {
+    public SelenideElement getMultipleSelect() {
         return multipleSelect;
     }
     @Step
-    public List<WebElement> getWineRecipes() {
+    public ElementsCollection getWineRecipes() {
         return wineRecipes;
     }
 

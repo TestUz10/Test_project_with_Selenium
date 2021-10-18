@@ -1,5 +1,6 @@
 package yellowTailSite.pages;
 
+import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,27 +13,27 @@ public class HeaderElements {
     WebDriver driver;
 
     @FindBy(xpath = "//div[@class='top-nav -active']/descendant::img[@alt='Yellow tail logo']")
-    private WebElement yellowTailLink;
+    private SelenideElement yellowTailLink;
     @FindBy(xpath = "//div[@class='inner']//span[text()='Wines']")
-    private WebElement winesLink;
+    private SelenideElement winesLink;
     @FindBy(xpath = "//div[@class='inner']//span[text()='Where To Buy']")
-    private WebElement whereToBuyLink;
+    private SelenideElement whereToBuyLink;
     @FindBy(xpath = "//div[@class='inner']//span[text()='Cocktails']")
-    private WebElement cocktailsLink;
+    private SelenideElement cocktailsLink;
     @FindBy(xpath = "//div[@class='inner']//span[text()='Our Story']")
-    private WebElement ourStoryLink;
+    private SelenideElement ourStoryLink;
     @FindBy(xpath = "//div[@class='inner']//span[text()='FAQs']")
-    private WebElement FAQSLink;
+    private SelenideElement FAQSLink;
     @FindBy(xpath = "//div[@class='inner']//span[text()='Contact']")
-    private WebElement contactLink;
+    private SelenideElement contactLink;
     @FindBy(xpath = "//li[@class='link country-select']//*[@class='fa fa-globe fa-lg']")
-    private WebElement globeDDL;
+    private SelenideElement globeDDL;
     @FindBy(xpath = "//div[@class='top-nav -active']/descendant::a[@data-key='US']")
-    private WebElement regionUS;
+    private SelenideElement regionUS;
     @FindBy(xpath = "//div[@class='top-nav -active']/descendant::a[@data-key='AU']")
-    private WebElement regionAU;
+    private SelenideElement regionAU;
     @FindBy(xpath = "//div[@class='top-nav -active']/descendant::a[@data-key='CN']")
-    private WebElement regionCN;
+    private SelenideElement regionCN;
 
 
     public HeaderElements() {
@@ -40,47 +41,47 @@ public class HeaderElements {
         PageFactory.initElements(driver, this);
     }
     @Step
-    public WebElement getYellowTailLink() {
+    public SelenideElement getYellowTailLink() {
         return yellowTailLink;
     }
     @Step
-    public WebElement getWinesLink() {
+    public SelenideElement getWinesLink() {
         return winesLink;
     }
     @Step
-    public WebElement getWhereToBuyLink() {
+    public SelenideElement getWhereToBuyLink() {
         return whereToBuyLink;
     }
     @Step
-    public WebElement getCocktailsLink() {
+    public SelenideElement getCocktailsLink() {
         return cocktailsLink;
     }
     @Step
-    public WebElement getOurStoryLink() {
+    public SelenideElement getOurStoryLink() {
         return ourStoryLink;
     }
     @Step
-    public WebElement getFAQSLink() {
+    public SelenideElement getFAQSLink() {
         return FAQSLink;
     }
     @Step
-    public WebElement getContactLink() {
+    public SelenideElement getContactLink() {
         return contactLink;
     }
     @Step
-    public WebElement getGlobeDDL() {
+    public SelenideElement getGlobeDDL() {
         return globeDDL;
     }
     @Step
-    public WebElement getRegionUS() {
+    public SelenideElement getRegionUS() {
         return regionUS;
     }
     @Step
-    public WebElement getRegionAU() {
+    public SelenideElement getRegionAU() {
         return regionAU;
     }
     @Step
-    public WebElement getRegionCN() {
+    public SelenideElement getRegionCN() {
         return regionCN;
     }
 }

@@ -1,5 +1,6 @@
 package yellowTailSite.pages;
 
+import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,33 +11,33 @@ import yellowTailSite.DriverProvider;
 public class WhereToBuyPage {
     WebDriver driver;
     @FindBy(id = "locationName")
-    private WebElement myLocation;
+    private SelenideElement myLocation;
     @FindBy(className = "search-submit")
-    private WebElement searchButton;
+    private SelenideElement searchButton;
     @FindBy(xpath = "//h3[text()='Stockists in your area:']")
-    private WebElement stocksInYourArea;
+    private SelenideElement stocksInYourArea;
     @FindBy(xpath = "//div[@class='tiles']/descendant::div[@class='tile']")
-    private WebElement addressesAreDisplayed;
+    private SelenideElement addressesAreDisplayed;
 
-    public WhereToBuyPage() {
-        this.driver = DriverProvider.INSTANCE.getDriver();
-        PageFactory.initElements(driver, this);
-    }
+//    public WhereToBuyPage() {
+//        this.driver = DriverProvider.INSTANCE.getDriver();
+//        PageFactory.initElements(driver, this);
+//    }
 
     @Step
-    public WebElement getMyLocation() {
+    public SelenideElement getMyLocation() {
         return myLocation;
     }
     @Step
-    public WebElement getSearchButton() {
+    public SelenideElement getSearchButton() {
         return searchButton;
     }
     @Step
-    public WebElement getStocksInYourArea() {
+    public SelenideElement getStocksInYourArea() {
         return stocksInYourArea;
     }
     @Step
-    public WebElement getAddressesAreDisplayed() {
+    public SelenideElement getAddressesAreDisplayed() {
         return addressesAreDisplayed;
     }
 
